@@ -215,6 +215,9 @@ class Reaction:
     def simpCont(self) -> list:
         return [c.cont for c in self.cont]
 
+    def contIs(self, cont: str):
+        return cont in self.simpCont() and len(self.cont) == 1
+
     def contContains(self, cont: str):
         return cont in self.simpCont()
 
@@ -324,10 +327,10 @@ class Statistic:
         self.ZSum = sum([r.z.score for r in self.reactions if r.z])
         self.ZEst = Statistic.ZEst_table[self.Zf]
 
-        self.W = sum([1 for r in self.reactions if r.partIs('W')])
-        self.D = sum([1 for r in self.reactions if r.partIs('D')])
+        self.W = sum([1 for r in self.reactions if r.partIs('W') or r.partIs('WS')])
+        self.D = sum([1 for r in self.reactions if r.partIs('D') or r.partIs('DS')])
         self.W_D = self.W + self.D
-        self.Dd = sum([1 for r in self.reactions if r.partIs('Dd')])
+        self.Dd = sum([1 for r in self.reactions if r.partIs('Dd') or r.partIs('DdS')])
         self.S = sum([1 for r in self.reactions if r.partContains('S')])
 
         self.DQplus = sum([1 for r in self.reactions if r.DQis('+')])
@@ -338,31 +341,54 @@ class Statistic:
         # 决定因子
         self.blends = [r.det for r in self.reactions if r.isBlend()]
 
-        self.M = sum([1 for r in self.reactions if r.detIs('M')])
-        self.FM = sum([1 for r in self.reactions if r.detIs('FM')])
-        self.m = sum([1 for r in self.reactions if r.detIs('m')])
-        self.FC = sum([1 for r in self.reactions if r.detIs('FC')])
-        self.CF = sum([1 for r in self.reactions if r.detIs('CF')])
-        self.C = sum([1 for r in self.reactions if r.detIs('C')])
-        self.Cn = sum([1 for r in self.reactions if r.detIs('Cn')])
-        self.FCp = sum([1 for r in self.reactions if r.detIs("FC'")])
-        self.CpF = sum([1 for r in self.reactions if r.detIs("C'F")])
-        self.Cp = sum([1 for r in self.reactions if r.detIs("C'")])
-        self.FT = sum([1 for r in self.reactions if r.detIs('FT')])
-        self.TF = sum([1 for r in self.reactions if r.detIs('TF')])
-        self.T = sum([1 for r in self.reactions if r.detIs('T')])
-        self.FV = sum([1 for r in self.reactions if r.detIs('FV')])
-        self.VF = sum([1 for r in self.reactions if r.detIs('VF')])
-        self.V = sum([1 for r in self.reactions if r.detIs('V')])
-        self.FY = sum([1 for r in self.reactions if r.detIs('FY')])
-        self.YF = sum([1 for r in self.reactions if r.detIs('YF')])
-        self.Y = sum([1 for r in self.reactions if r.detIs('Y')])
-        self.Fr = sum([1 for r in self.reactions if r.detIs('Fr')])
-        self.rF = sum([1 for r in self.reactions if r.detIs('rF')])
-        self.FD = sum([1 for r in self.reactions if r.detIs('FD')])
-        self.F = sum([1 for r in self.reactions if r.detIs('F')])
+        self.M = sum([1 for r in self.reactions if r.detContains('M')])
+        self.FM = sum([1 for r in self.reactions if r.detContains('FM')])
+        self.m = sum([1 for r in self.reactions if r.detContains('m')])
+        self.FC = sum([1 for r in self.reactions if r.detContains('FC')])
+        self.CF = sum([1 for r in self.reactions if r.detContains('CF')])
+        self.C = sum([1 for r in self.reactions if r.detContains('C')])
+        self.Cn = sum([1 for r in self.reactions if r.detContains('Cn')])
+        self.FCp = sum([1 for r in self.reactions if r.detContains("FC'")])
+        self.CpF = sum([1 for r in self.reactions if r.detContains("C'F")])
+        self.Cp = sum([1 for r in self.reactions if r.detContains("C'")])
+        self.FT = sum([1 for r in self.reactions if r.detContains('FT')])
+        self.TF = sum([1 for r in self.reactions if r.detContains('TF')])
+        self.T = sum([1 for r in self.reactions if r.detContains('T')])
+        self.FV = sum([1 for r in self.reactions if r.detContains('FV')])
+        self.VF = sum([1 for r in self.reactions if r.detContains('VF')])
+        self.V = sum([1 for r in self.reactions if r.detContains('V')])
+        self.FY = sum([1 for r in self.reactions if r.detContains('FY')])
+        self.YF = sum([1 for r in self.reactions if r.detContains('YF')])
+        self.Y = sum([1 for r in self.reactions if r.detContains('Y')])
+        self.Fr = sum([1 for r in self.reactions if r.detContains('Fr')])
+        self.rF = sum([1 for r in self.reactions if r.detContains('rF')])
+        self.FD = sum([1 for r in self.reactions if r.detContains('FD')])
+        self.F = sum([1 for r in self.reactions if r.detContains('F')])
+        self.pair = sum([1 for r in self.reactions if r.detContains('(2)')])
 
-        self.two = sum([1 for r in self.reactions if r.detContains('(2)')])
+        self.PureM = sum([1 for r in self.reactions if r.detIs('M')])
+        self.PureFM = sum([1 for r in self.reactions if r.detIs('FM')])
+        self.Purem = sum([1 for r in self.reactions if r.detIs('m')])
+        self.PureFC = sum([1 for r in self.reactions if r.detIs('FC')])
+        self.PureCF = sum([1 for r in self.reactions if r.detIs('CF')])
+        self.PureC = sum([1 for r in self.reactions if r.detIs('C')])
+        self.PureCn = sum([1 for r in self.reactions if r.detIs('Cn')])
+        self.PureFCp = sum([1 for r in self.reactions if r.detIs("FC'")])
+        self.PureCpF = sum([1 for r in self.reactions if r.detIs("C'F")])
+        self.PureCp = sum([1 for r in self.reactions if r.detIs("C'")])
+        self.PureFT = sum([1 for r in self.reactions if r.detIs('FT')])
+        self.PureTF = sum([1 for r in self.reactions if r.detIs('TF')])
+        self.PureT = sum([1 for r in self.reactions if r.detIs('T')])
+        self.PureFV = sum([1 for r in self.reactions if r.detIs('FV')])
+        self.PureVF = sum([1 for r in self.reactions if r.detIs('VF')])
+        self.PureV = sum([1 for r in self.reactions if r.detIs('V')])
+        self.PureFY = sum([1 for r in self.reactions if r.detIs('FY')])
+        self.PureYF = sum([1 for r in self.reactions if r.detIs('YF')])
+        self.PureY = sum([1 for r in self.reactions if r.detIs('Y')])
+        self.PureFr = sum([1 for r in self.reactions if r.detIs('Fr')])
+        self.PurerF = sum([1 for r in self.reactions if r.detIs('rF')])
+        self.PureFD = sum([1 for r in self.reactions if r.detIs('FD')])
+        self.PureF = sum([1 for r in self.reactions if r.detIs('F')])
 
         # 形状质量
         self.FQplus = sum([1 for r in self.reactions if r.FQis('+')])
@@ -461,7 +487,7 @@ class Statistic:
         self.SumY = self.Y + self.YF + self.FY
 
         self.R = len(self.reactions)
-        self.L = self.F / (self.R - self.F)
+        self.L = self.PureF / (self.R - self.PureF)
 
         self.WSumC = 0.5 * self.FC + 1.0 * self.CF + 1.5 * self.C
         self.EB = Ratio(self.M, self.WSumC)
@@ -470,7 +496,7 @@ class Statistic:
         self.eb = Ratio(self.FM + self.m, self.SumCp + self.SumT + self.SumV + self.SumY)
         self.es = self.FM + self.m + self.SumCp + self.SumT + self.SumV + self.SumY
         self.Dscore = self.DConvert(self.EA - self.es)
-        self.Adjes = self.FM + max(self.m, 1) + self.SumCp + self.SumT + self.SumV + max(self.SumY, 1)
+        self.Adjes = self.FM + min(self.m, 1) + self.SumCp + self.SumT + self.SumV + min(self.SumY, 1)
         self.AdjD = self.DConvert(self.EA - self.Adjes)
 
         # 思维部分
@@ -484,7 +510,7 @@ class Statistic:
 
         # 情绪部分
         self.FCR = Ratio(self.FC, self.CF + self.C)
-        self.CpCR = Ratio(self.Cp, self.WSumC)
+        self.CpCR = Ratio(self.SumCp, self.WSumC)
         self.Afr = (sum([1 for r in self.reactions if r.card in (8, 9, 10)]) /
                     (self.R - sum([1 for r in self.reactions if r.card in (8, 9, 10)])))
         self.ComR = Ratio(len(self.blends), self.R)
@@ -500,19 +526,20 @@ class Statistic:
 
         # 加工部分
         self.EcoI = TriRatio(self.W, self.D, self.Dd)
-        self.AspR = Ratio(self.W, sum([1 for r in self.reactions if r.detContains('M')]))
+        self.AspR = Ratio(self.W, self.M)
         self.Zd = self.ZSum - self.ZEst
 
         # 人际交往部分
         self.GHR_PHR = Ratio(self.GHR, self.PHR)
         self.HCont = self.H + self.h + self.Hd + self.hd
+        self.PureH = sum([1 for r in self.reactions if r.contIs('H')])
         self.IsoI = (self.Bt + 2 * self.Cl + self.Ge + self.Ls + 2 * self.Na) / self.R
 
         # 自我知觉部分
         self.Fr_rF = self.Fr + self.rF
         self.An_Xy = self.An + self.Xy
         self.H_hd = Ratio(self.H, self.h + self.Hd + self.hd)
-        self.EgoI = (3 * self.Fr_rF + self.two) / self.R
+        self.EgoI = (3 * self.Fr_rF + self.pair) / self.R
 
         # 特殊指数
         # 自杀指数
@@ -569,7 +596,7 @@ class Statistic:
         self.HVI4 = self.S > 3
         self.HVI5 = self.HCont > 6
         self.HVI6 = self.h + self.a + self.hd + self.ad > 3
-        self.HVI7 = (self.H + self.A) / (self.Hd + self.Ad) < 4
+        self.HVI7 = (self.H + self.A) < 4 * (self.Hd + self.Ad)
         self.HVI8 = self.Cg > 3
 
         self.HVI = self.HVI1 and sum([self.HVI2, self.HVI3, self.HVI4, self.HVI5, self.HVI6, self.HVI7, self.HVI8]) >= 4
@@ -623,30 +650,30 @@ S = {self.S}
 
 决定因子
 Blends = {self.blends}
-M = {self.M}
-FM = {self.FM}
-m = {self.m}
-FC = {self.FC}
-CF = {self.CF}
-C = {self.C}
-Cn = {self.Cn}
-FC' = {self.FCp}
-C'F = {self.CpF}
-C' = {self.Cp}
-FT = {self.FT}
-TF = {self.TF}
-T = {self.T}
-FV = {self.FV}
-VF = {self.VF}
-V = {self.V}
-FY = {self.FY}
-YF = {self.YF}
-Y = {self.Y}
-Fr = {self.Fr}
-rF = {self.rF}
-FD = {self.FD}
-F = {self.F}
-(2) = {self.two}
+M = {self.PureM}
+FM = {self.PureFM}
+m = {self.Purem}
+FC = {self.PureFC}
+CF = {self.PureCF}
+C = {self.PureC}
+Cn = {self.PureCn}
+FC' = {self.PureFCp}
+C'F = {self.PureCpF}
+C' = {self.PureCp}
+FT = {self.PureFT}
+TF = {self.PureTF}
+T = {self.PureT}
+FV = {self.PureFV}
+VF = {self.PureVF}
+V = {self.PureV}
+FY = {self.PureFY}
+YF = {self.PureYF}
+Y = {self.PureY}
+Fr = {self.PureFr}
+rF = {self.PurerF}
+FD = {self.PureFD}
+F = {self.PureF}
+(2) = {self.pair}
 
 形状质量
 FQ+ = {self.FQplus}
@@ -771,7 +798,7 @@ SumC':WSumC = {self.CpCR}
 Afr = {self.Afr}
 S = {self.S}
 Blends:R = {self.ComR}
-CP = {self.Cp}
+CP = {self.CP}
 
 调节部分
 XA% = {self.XA}
@@ -798,7 +825,7 @@ a:p = {self.APR}
 Food = {self.Fd}
 SumT = {self.SumT}
 Hum Cont = {self.HCont}
-PureH = {self.H}
+PureH = {self.PureH}
 PER = {self.PER}
 Iso Index = {self.IsoI}
 
