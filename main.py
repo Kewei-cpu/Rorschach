@@ -858,5 +858,5 @@ OBS = {self.OBS}
 
 
 if __name__ == '__main__':
-    statistic = Statistic('data/ly.xlsx')
+    statistic = Statistic('data/qjx.xlsx')
     statistic.saveResult()
