@@ -1,3 +1,4 @@
+import time
 from typing import List, Optional
 
 import pandas
@@ -320,6 +321,8 @@ class Statistic:
     }
 
     def __init__(self, path):
+        self.path = path
+        self.name = path.split('/')[-1].split('.')[0]
         self.reactions = self.readReactions(path)
 
         # 部位特征
@@ -561,7 +564,7 @@ class Statistic:
                      self.SCON10, self.SCON11, self.SCON12]
 
         # 知觉思维指数
-        self.PTI1 = self.XA < 0.7 or self.WDA < 0.75
+        self.PTI1 = self.XA < 0.7 and self.WDA < 0.75
         self.PTI2 = self.Xminus > 0.29
         self.PTI3 = self.Lv2 > 2 and self.FAB2 > 0
         self.PTI4 = self.R < 17 and self.WSum6 > 12 or self.R > 16 and self.WSum6 > 17
@@ -585,7 +588,7 @@ class Statistic:
         self.CDI2 = self.COP < 2 or self.AG < 2
         self.CDI3 = self.WSumC < 2.5 or self.Afr < 0.46
         self.CDI4 = self.P > sum([r.activeCount() for r in self.reactions]) + 1 or self.H < 2
-        self.CDI5 = self.MQualminus > 1 or self.Xminus > 0.4
+        self.CDI5 = self.SumT > 1 or self.IsoI > 0.24 or self.Fd > 0
 
         self.CDI = [self.CDI1, self.CDI2, self.CDI3, self.CDI4, self.CDI5]
 
@@ -636,8 +639,14 @@ class Statistic:
             )
         return reactions
 
+    def saveResult(self):
+        with open(f'result/{self.name}.txt', 'w', encoding='utf-8') as f:
+            f.write(repr(self))
+
     def __repr__(self):
-        return f"""
+        return \
+f"""受试者：{self.name}    分析时间：{time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}
+==============================================
 部位特征
 Zf = {self.Zf}
 ZSum = {self.ZSum}
@@ -849,5 +858,5 @@ OBS = {self.OBS}
 
 
 if __name__ == '__main__':
-    statistic = Statistic('data/hjh.xlsx')
-    print(statistic)
+    statistic = Statistic('data/ly.xlsx')
+    statistic.saveResult()

@@ -1,0 +1,210 @@
+受试者：hd    分析时间：2024-11-11 19:45:29
+==============================================
+部位特征
+Zf = 12
+ZSum = 38.0
+ZEst = 38.0
+W = 13
+D = 20
+W+D = 33
+Dd = 5
+S = 7
+
+决定因子
+Blends = [[Ma, F, (2)], [CF, C'F], [VF, F, YF], [Ma, F, (2)], [CF, C'F]]
+M = 3
+FM = 1
+m = 1
+FC = 0
+CF = 3
+C = 0
+Cn = 0
+FC' = 0
+C'F = 1
+C' = 1
+FT = 0
+TF = 0
+T = 0
+FV = 1
+VF = 1
+V = 0
+FY = 2
+YF = 1
+Y = 0
+Fr = 0
+rF = 0
+FD = 1
+F = 17
+(2) = 7
+
+形状质量
+FQ+ = 0
+FQo = 15
+FQu = 14
+FQ- = 8
+FQnone = 1
+
+MQual+ = 0
+MQualo = 3
+MQualu = 1
+MQual- = 1
+MQualnone = 0
+
+W+D+ = 0
+W+Do = 12
+W+Du = 11
+W+D- = 5
+W+Dnone = 1
+
+内容
+H = 4
+(H) = 1
+Hd = 6
+(Hd) = 0
+Hx = 0
+A = 6
+(A) = 0
+Ad = 5
+(Ad) = 0
+An = 1
+Art = 4
+Ay = 4
+Bl = 0
+Bt = 4
+Cg = 2
+Cl = 0
+Ex = 0
+Fd = 1
+Fi = 0
+Ge = 0
+Hh = 3
+Ls = 3
+Na = 0
+Sc = 4
+Sx = 0
+Id = 1
+
+部位序列
+1 = ['WS', 'Dd', 'W', 'WS', 'DdS', 'W']
+2 = ['D', 'D', 'D', 'DS', 'D']
+3 = ['D', 'DdS', 'D']
+4 = ['W', 'W', 'W', 'D', 'DdS', 'D']
+5 = ['W']
+6 = ['D', 'D', 'D', 'Dd']
+7 = ['W', 'D', 'D']
+8 = ['D', 'W', 'D', 'W']
+9 = ['WS']
+10 = ['W', 'D', 'D', 'D', 'D']
+
+特殊分数
+DV = 0
+DV2 = 0
+INC = 1
+INC2 = 0
+DR = 0
+DR2 = 0
+FAB = 0
+FAB2 = 0
+ALOG = 0
+CON = 0
+AB = 1
+AG = 0
+COP = 2
+CP = 0
+GHR = 3
+PHR = 6
+MOR = 0
+PER = 3
+PSV = 0
+
+Sum6 = 1
+WSum6 = 2
+
+------------
+核心部分
+R = 38
+L = 0.8095238095238095
+
+EB = 5:5.0
+EA = 10.0
+EBPer = ?
+eb = 2:11
+es = 13
+D = -1.0
+Adjes = 10
+AdjD = 0
+
+FM = 1
+m = 1
+SumC' = 4
+SumT = 0
+SumV = 3
+SumY = 4
+
+思维部分
+a:p = 5:2
+Ma:Mp = 4:1
+2AB+(Art+Ay) = 10
+MOR = 0
+
+Sum6 = 1
+Lv2 = 0
+WSum6 = 2
+M- = 1
+Mnone = 0
+
+情绪部分
+FC:CF+C = 0:5
+PureC = 0
+SumC':WSumC = 4:5.0
+Afr = 0.35714285714285715
+S = 7
+Blends:R = 5:38
+CP = 0
+
+调节部分
+XA% = 0.7631578947368421
+WDA% = 0.6052631578947368
+X-% = 0.21052631578947367
+S- = 3
+P = 3
+X+% = 0.39473684210526316
+Xu% = 0.3684210526315789
+
+加工部分
+Zf = 12
+W:D:Dd = 13:20:5
+W:M = 13:5
+Zd = 0.0
+PSV = 0
+DQ+ = 8
+DQv = 1
+
+人际交往部分
+COP = 2
+GHR:PHR = 3:6
+a:p = 5:2
+Food = 1
+SumT = 0
+Hum Cont = 11
+PureH = 1
+PER = 3
+Iso Index = 0.18421052631578946
+
+自我知觉部分
+3r+(2)/R = 0.18421052631578946
+Fr+rF = 0
+SumV = 3
+FD = 1
+An+Xy = 1
+MOR = 0
+H:(H)+Hd+(Hd) = 4:7
+
+特殊指数
+PTI = 0 ()
+DEPI = 6 (1,2,3,4,5,6)
+CDI = 3 (2,3,5)
+S-CON = 7 (1,2,3,6,7,8,9)
+HVI = False
+OBS = False
+        
