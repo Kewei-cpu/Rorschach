@@ -895,7 +895,7 @@ OBS = {self.OBS}
 
 
 if __name__ == '__main__':
-    statistic = Statistic('data/ly.xlsx')
+    statistic = Statistic('data/lzy.xlsx')
     statistic.saveResult()
     for r in statistic.reactions:
         print(r)

@@ -1,0 +1,210 @@
+受试者：lzy    分析时间：2024-11-15 21:35:19
+==============================================
+部位特征
+Zf = 7
+ZSum = 15.0
+ZEst = 20.5
+W = 7
+D = 8
+W+D = 15
+Dd = 1
+S = 2
+
+决定因子
+Blends = []
+M = 1
+FM = 0
+m = 1
+FC = 0
+CF = 0
+C = 0
+Cn = 0
+FC' = 0
+C'F = 0
+C' = 0
+FT = 0
+TF = 0
+T = 0
+FV = 0
+VF = 0
+V = 0
+FY = 0
+YF = 1
+Y = 0
+Fr = 0
+rF = 0
+FD = 0
+F = 15
+(2) = 2
+
+形状质量
+FQ+ = 0
+FQo = 10
+FQu = 5
+FQ- = 3
+FQnone = 0
+
+MQual+ = 0
+MQualo = 1
+MQualu = 0
+MQual- = 0
+MQualnone = 0
+
+W+D+ = 0
+W+Do = 9
+W+Du = 2
+W+D- = 2
+W+Dnone = 0
+
+内容
+H = 2
+(H) = 0
+Hd = 0
+(Hd) = 1
+Hx = 0
+A = 11
+(A) = 0
+Ad = 0
+(Ad) = 0
+An = 0
+Art = 0
+Ay = 0
+Bl = 0
+Bt = 1
+Cg = 0
+Cl = 0
+Ex = 1
+Fd = 0
+Fi = 0
+Ge = 0
+Hh = 0
+Ls = 0
+Na = 0
+Sc = 2
+Sx = 0
+Id = 0
+
+部位序列
+1 = ['W', 'D', 'W', 'W', 'WS']
+2 = ['D', 'D']
+3 = ['D', 'D']
+4 = ['W']
+5 = ['W']
+6 = ['Dd', 'F']
+7 = ['F', 'DS']
+8 = ['D']
+9 = ['W']
+10 = ['D']
+
+特殊分数
+DV = 0
+DV2 = 0
+INC = 0
+INC2 = 0
+DR = 0
+DR2 = 0
+FAB = 0
+FAB2 = 0
+ALOG = 0
+CON = 0
+AB = 0
+AG = 0
+COP = 0
+CP = 0
+GHR = 3
+PHR = 0
+MOR = 0
+PER = 0
+PSV = 1
+
+Sum6 = 0
+WSum6 = 0
+
+------------
+核心部分
+R = 18
+L = 5.0
+
+EB = 1:0.0
+EA = 1.0
+EBPer = ?
+eb = 1:1
+es = 2
+D = -0.0
+Adjes = 2
+AdjD = -0.0
+
+FM = 0
+m = 1
+SumC' = 0
+SumT = 0
+SumV = 0
+SumY = 1
+
+思维部分
+a:p = 2:0
+Ma:Mp = 1:0
+2AB+(Art+Ay) = 0
+MOR = 0
+
+Sum6 = 0
+Lv2 = 0
+WSum6 = 0
+M- = 0
+Mnone = 0
+
+情绪部分
+FC:CF+C = 0:0
+PureC = 0
+SumC':WSumC = 0:0.0
+Afr = 0.2
+S = 2
+Blends:R = 0:18
+CP = 0
+
+调节部分
+XA% = 0.8333333333333334
+WDA% = 0.6111111111111112
+X-% = 0.16666666666666666
+S- = 0
+P = 4
+X+% = 0.5555555555555556
+Xu% = 0.2777777777777778
+
+加工部分
+Zf = 7
+W:D:Dd = 7:8:1
+W:M = 7:1
+Zd = -5.5
+PSV = 1
+DQ+ = 0
+DQv = 1
+
+人际交往部分
+COP = 0
+GHR:PHR = 3:0
+a:p = 2:0
+Food = 0
+SumT = 0
+Hum Cont = 3
+PureH = 2
+PER = 0
+Iso Index = 0.05555555555555555
+
+自我知觉部分
+3r+(2)/R = 0.1111111111111111
+Fr+rF = 0
+SumV = 0
+FD = 0
+An+Xy = 0
+MOR = 0
+H:(H)+Hd+(Hd) = 2:1
+
+特殊指数
+PTI = 0 ()
+DEPI = 3 (3,4,7)
+CDI = 4 (1,2,3,4)
+S-CON = 4 (3,5,6,8)
+HVI = False
+OBS = False
+        
