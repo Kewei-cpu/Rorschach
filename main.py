@@ -173,17 +173,52 @@ class Reaction:
         self.z = z
         self.spec = spec
 
+        self.calcHR()
+
     def __repr__(self):
-        return f"""
-        Card {self.card}: {self.desc}
-        {self.pt}{self.dq} {'.'.join([str(d) for d in self.det])}{self.fq} {'.'.join([str(c) for c in self.cont])} {'P' if self.p else ''} {self.z if self.z else ''} {'.'.join([str(s) for s in self.spec])}
-        """
+        return \
+            f"""Card {self.card}: {self.desc}
+{self.pt}{self.dq} {'.'.join([str(d) for d in self.det])}{self.fq} {'.'.join([str(c) for c in self.cont])} {'P' if self.p else ''} {self.z if self.z else ''} {'.'.join([str(s) for s in self.spec])}
+"""
 
     def __str__(self):
-        return f"""
-        Card {self.card}: {self.desc}
-        {self.pt}{self.dq} {'.'.join([str(d) for d in self.det])}{self.fq} {'.'.join([str(c) for c in self.cont])} {'P' if self.p else ''} {self.z if self.z else ''} {'.'.join([str(s) for s in self.spec])}
-        """
+        return \
+            f"""Card {self.card}: {self.desc}
+{self.pt}{self.dq} {'.'.join([str(d) for d in self.det])}{self.fq} {'.'.join([str(c) for c in self.cont])} {'P' if self.p else ''} {self.z if self.z else ''} {'.'.join([str(s) for s in self.spec])}
+"""
+
+    def calcHR(self):
+        if not (self.contContains('H') or
+                self.contContains('Hd') or
+                self.contContains('(H)') or
+                self.contContains('(Hd)') or
+                self.contContains('Hx') or
+                self.contContains('M') or
+                self.contContains('FM') and
+                (self.specContains('COP') or self.specContains('AG'))):
+            return
+
+        if self.contIs('H') and self.fq.fq in ('+', 'o', 'u') and (self.simpSpec6() in ([], ['DV'])) \
+                and not (self.specContains('COP') or self.specContains('AG')):
+            return self.spec.append(Spec('GHR'))
+
+        if self.fq.fq in ('-', 'none') or \
+                [s.spec for s in self.spec if s.spec in ['DV2', 'INC2', 'DR2', 'FAB2', 'ALOG', 'CON']]:
+            return self.spec.append(Spec('PHR'))
+
+        if self.specContains('COP') and not self.specContains('AG'):
+            return self.spec.append(Spec('GHR'))
+
+        if self.specContains('FAB') or self.specContains('MOR') or self.contContains('An'):
+            return self.spec.append(Spec('PHR'))
+
+        if self.card in (3, 4, 7, 9) and self.p:
+            return self.spec.append(Spec('GHR'))
+
+        if self.specContains('AG') or self.specContains('INC') or self.specContains('DR') or self.contContains('Hd'):
+            return self.spec.append(Spec('PHR'))
+
+        self.spec.append(Spec('GHR'))
 
     def partIs(self, part: str):
         return self.pt.category == part
@@ -635,7 +670,9 @@ class Statistic:
                          det=[Determination(det) for det in row['Det'].split('.')],
                          cont=[Content(cont) for cont in row['Cont'].split('.')], p=not pandas.isna(row['P']),
                          z=Z(row['Z'], row['Card']) if not pandas.isna(row['Z']) else None,
-                         spec=[Spec(spec) for spec in row['Spec'].split('.')] if not pandas.isna(row['Spec']) else [])
+                         # GHR, PHR不再读取。而是根据数据计算
+                         spec=[Spec(spec) for spec in row['Spec'].split('.') if
+                               spec not in ('GHR', 'PHR')] if not pandas.isna(row['Spec']) else [])
             )
         return reactions
 
@@ -645,7 +682,7 @@ class Statistic:
 
     def __repr__(self):
         return \
-f"""受试者：{self.name}    分析时间：{time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}
+            f"""受试者：{self.name}    分析时间：{time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}
 ==============================================
 部位特征
 Zf = {self.Zf}
@@ -858,5 +895,7 @@ OBS = {self.OBS}
 
 
 if __name__ == '__main__':
-    statistic = Statistic('data/qjx.xlsx')
+    statistic = Statistic('data/ly.xlsx')
     statistic.saveResult()
+    for r in statistic.reactions:
+        print(r)
