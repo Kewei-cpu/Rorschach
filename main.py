@@ -721,6 +721,12 @@ FD = {self.PureFD}
 F = {self.PureF}
 (2) = {self.pair}
 
+发展质量
+DQ+ = {self.DQplus}
+DQo = {self.DQo}
+DQv/+ = {self.DQvplus}
+DQv = {self.DQv}
+
 形状质量
 FQ+ = {self.FQplus}
 FQo = {self.FQo}
@@ -769,16 +775,16 @@ Sx = {self.Sx}
 Id = {self.Id}
 
 部位序列
-1 = {self.part_seq[1]}
-2 = {self.part_seq[2]}
-3 = {self.part_seq[3]}
-4 = {self.part_seq[4]}
-5 = {self.part_seq[5]}
-6 = {self.part_seq[6]}
-7 = {self.part_seq[7]}
-8 = {self.part_seq[8]}
-9 = {self.part_seq[9]}
-10 = {self.part_seq[10]}
+1 = {', '.join(self.part_seq[1])}
+2 = {', '.join(self.part_seq[2])}
+3 = {', '.join(self.part_seq[3])}
+4 = {', '.join(self.part_seq[4])}
+5 = {', '.join(self.part_seq[5])}
+6 = {', '.join(self.part_seq[6])}
+7 = {', '.join(self.part_seq[7])}
+8 = {', '.join(self.part_seq[8])}
+9 = {', '.join(self.part_seq[9])}
+10 = {', '.join(self.part_seq[10])}
 
 特殊分数
 DV = {self.DV}
@@ -895,7 +901,7 @@ OBS = {self.OBS}
 
 
 if __name__ == '__main__':
-    statistic = Statistic('data/lzy.xlsx')
+    statistic = Statistic('data/zl.xlsx')
     statistic.saveResult()
     for r in statistic.reactions:
         print(r)

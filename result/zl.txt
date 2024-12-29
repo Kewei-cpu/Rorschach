@@ -1,0 +1,216 @@
+受试者：zl    分析时间：2024-12-29 14:48:20
+==============================================
+部位特征
+Zf = 10
+ZSum = 40.0
+ZEst = 31.0
+W = 11
+D = 12
+W+D = 23
+Dd = 4
+S = 2
+
+决定因子
+Blends = [[FMa, FD, (2)], [Ma, FC, V, (2)], [FMp, Y, FD], [TF, YF], [ma, FC], [FMa, FC]]
+M = 1
+FM = 0
+m = 0
+FC = 4
+CF = 2
+C = 0
+Cn = 0
+FC' = 2
+C'F = 0
+C' = 0
+FT = 0
+TF = 0
+T = 0
+FV = 0
+VF = 1
+V = 0
+FY = 1
+YF = 0
+Y = 0
+Fr = 0
+rF = 0
+FD = 0
+F = 9
+(2) = 3
+
+发展质量
+DQ+ = 4
+DQo = 18
+DQv/+ = 0
+DQv = 5
+
+形状质量
+FQ+ = 2
+FQo = 7
+FQu = 9
+FQ- = 9
+FQnone = 0
+
+MQual+ = 0
+MQualo = 2
+MQualu = 0
+MQual- = 0
+MQualnone = 0
+
+W+D+ = 2
+W+Do = 6
+W+Du = 7
+W+D- = 6
+W+Dnone = 0
+
+内容
+H = 1
+(H) = 1
+Hd = 0
+(Hd) = 0
+Hx = 1
+A = 5
+(A) = 2
+Ad = 1
+(Ad) = 1
+An = 4
+Art = 3
+Ay = 1
+Bl = 0
+Bt = 6
+Cg = 3
+Cl = 0
+Ex = 0
+Fd = 0
+Fi = 1
+Ge = 2
+Hh = 0
+Ls = 1
+Na = 0
+Sc = 2
+Sx = 1
+Id = 0
+
+部位序列
+1 = Dd, D, Dd, Dd
+2 = W, DS
+3 = D, D, D
+4 = W
+5 = W
+6 = W, W, D
+7 = Dd, DS
+8 = W, W, W
+9 = W, W, W
+10 = D, D, D, D, D
+
+特殊分数
+DV = 1
+DV2 = 0
+INC = 1
+INC2 = 0
+DR = 0
+DR2 = 0
+FAB = 0
+FAB2 = 0
+ALOG = 1
+CON = 0
+AB = 1
+AG = 0
+COP = 1
+CP = 0
+GHR = 2
+PHR = 1
+MOR = 0
+PER = 2
+PSV = 1
+
+Sum6 = 3
+WSum6 = 8
+
+------------
+核心部分
+R = 27
+L = 0.5
+
+EB = 2:5.5
+EA = 7.5
+EBPer = ?
+eb = 4:8
+es = 12
+D = -1.0
+Adjes = 10
+AdjD = -0.0
+
+FM = 3
+m = 1
+SumC' = 2
+SumT = 1
+SumV = 2
+SumY = 3
+
+思维部分
+a:p = 6:1
+Ma:Mp = 2:0
+2AB+(Art+Ay) = 6
+MOR = 0
+
+Sum6 = 3
+Lv2 = 0
+WSum6 = 8
+M- = 0
+Mnone = 0
+
+情绪部分
+FC:CF+C = 7:2
+PureC = 0
+SumC':WSumC = 2:5.5
+Afr = 0.6875
+S = 2
+Blends:R = 6:27
+CP = 0
+
+调节部分
+XA% = 0.6666666666666666
+WDA% = 0.5555555555555556
+X-% = 0.3333333333333333
+S- = 0
+P = 1
+X+% = 0.3333333333333333
+Xu% = 0.3333333333333333
+
+加工部分
+Zf = 10
+W:D:Dd = 11:12:4
+W:M = 11:2
+Zd = 9.0
+PSV = 1
+DQ+ = 4
+DQv = 5
+
+人际交往部分
+COP = 1
+GHR:PHR = 2:1
+a:p = 6:1
+Food = 0
+SumT = 1
+Hum Cont = 2
+PureH = 0
+PER = 2
+Iso Index = 0.3333333333333333
+
+自我知觉部分
+3r+(2)/R = 0.1111111111111111
+Fr+rF = 0
+SumV = 2
+FD = 2
+An+Xy = 6
+MOR = 0
+H:(H)+Hd+(Hd) = 1:1
+
+特殊指数
+PTI = 2 (1,2)
+DEPI = 6 (1,2,3,5,6,7)
+CDI = 3 (2,4,5)
+S-CON = 8 (1,2,3,5,6,8,10,11)
+HVI = False
+OBS = False
+        
